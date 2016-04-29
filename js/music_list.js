@@ -355,24 +355,27 @@
 	}
 		
 	//获取缓存my_collectList(类型为字符串)，字符串转换为数组
-	for(var m=0; m < str.length; m++){
-			if(str[m] == ","){
-				my_collectList[m] = null;
-			}
-			else{
+	// for(var m=0; m < str.length; m++){
+	// 		if(str[m] == ","){
+	// 			my_collectList[m] = null;
+	// 		}
+	// 		else{
 			
-				my_collectList[m] = str[m];
-			}
-	}
-	//删除数组中的null
-	for(var j=0; j<my_collectList.length; j++){
-		if(my_collectList[j] == null){
-			my_collectList.splice(j,1);
-		}
-		my_collectList[j] = parseInt(my_collectList[j]);
-	}
+	// 			my_collectList[m] = str[m];
+	// 		}
+	// }
+	// //删除数组中的null
+	// for(var j=0; j<my_collectList.length; j++){
+	// 	if(my_collectList[j] == null){
+	// 		my_collectList.splice(j,1);
+	// 	}
+	// 	my_collectList[j] = parseInt(my_collectList[j]);
+	// }
 
+	str='['+str+']';//将只是数字的字符串转为数组样式的字符串
+	my_collectList = eval(str);//eval方法可以将字符串转化成js可以识别的，因此比上面的处理简单了许多
 
+	
 	var nowPlay;
 
 	// 加载音乐

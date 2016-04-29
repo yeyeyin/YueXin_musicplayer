@@ -198,23 +198,25 @@ var 	continous = true,
 	
 	var my_collectList = new Array();
 	//将字符串转换为数组
-	for(var i=0; i<str.length; i++){
-		if(str[i] == ","){
-			my_collectList[i] = null;
-		}else{
-			my_collectList[i] = str[i];
-		}
-	}
+	// for(var i=0; i<str.length; i++){
+	// 	if(str[i] == ","){
+	// 		my_collectList[i] = null;
+	// 	}else{
+	// 		my_collectList[i] = str[i];
+	// 	}
+	// }
 
-	//删除数组中的null
-	for(var j=0; j<my_collectList.length; j++){
-		if(my_collectList[j] == null){
-			my_collectList.splice(j,1);
-			// console.log(my_collectList);
-		}
-		my_collectList[j] = parseInt(my_collectList[j]);
-	}
+	// //删除数组中的null
+	// for(var j=0; j<my_collectList.length; j++){
+	// 	if(my_collectList[j] == null){
+	// 		my_collectList.splice(j,1);
+	// 		// console.log(my_collectList);
+	// 	}
+	// 	my_collectList[j] = parseInt(my_collectList[j]);
+	// }
 
+	str='['+str+']';//将只是数字的字符串转为数组样式的字符串
+	my_collectList = eval(str);//eval方法可以将字符串转化成js可以识别的，因此比上面的处理简单了许多
 
 
 	var sWidth = window.innerWidth,
